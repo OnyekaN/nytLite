@@ -15,7 +15,20 @@ body {
   overflow: scroll;
   height: 100vh;
   width: 200px;
-  background-color: #eee;
-  border-right: 1px solid #333; }
+  background-color: #eee; }
+  .menu-container .article-entry {
+    width: 100%;
+    min-height: 80px;
+    height: auto;
+    padding: 5px;
+    padding-left: 10px;
+    border-bottom: 1px solid #33333333; }
+    .menu-container .article-entry:hover {
+      background-color: #33889933;
+      cursor: pointer; }
+
+.reader-container {
+  margin-left: 200px;
+  padding-left: 5px; }
 
 /*# sourceMappingURL=main.css.map */

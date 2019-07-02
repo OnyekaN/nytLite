@@ -15,7 +15,10 @@ class ArticlesComponent extends React.Component {
 
 		this.state = {
 			allArticles: [],
+			currentArticle: {},
 		}
+
+		this.onArticleSelect = this.onArticleSelect.bind(this);
 
 	}
 
@@ -27,25 +30,24 @@ class ArticlesComponent extends React.Component {
 				articles.push(articlesJSON[key]);
 			}
 		});
+		this.setState({ allArticles: articles });
 
-		this.setState({
-			allArticles: articles,
-		});
+	}
 
+	onArticleSelect(article) {
+		if ( false ) {
+			return
+		} else {
+			this.setState({ currentArticle: article });
+		}
 	}
 
 	render() {
 		return (
 			<div className="articles-container">
-				<MenuComponent />
-				<div>
-					{this.state.allArticles.map((obj, i) => { return (
-						<div key={i}>
-							<h3>{obj.title}</h3>
-							<p>nytimes.com{obj.href}</p>
-						</div>
-					)})}
-				</div>
+				<MenuComponent articles={this.state.allArticles}
+					clickHandler={this.onArticleSelect} />
+				<ReaderComponent article={this.state.currentArticle} />
 			</div>
 		);
 	}

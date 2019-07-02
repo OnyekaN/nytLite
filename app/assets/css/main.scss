@@ -1,6 +1,5 @@
 body {
 	height: 100%;
-
 }
 
 
@@ -14,16 +13,34 @@ body {
 	overflow: scroll;
 }
 
+$menu-container-width: 200px;
+
 .menu-container {
 	float: left;
 	position: absolute;
 	overflow: scroll;
 	height: 100vh;
-	width: 200px;
+	width: $menu-container-width;
 	background-color: #eee;
-	border-right: 1px solid #333;
+
+	.article-entry {
+		width: 100%;
+		min-height: 80px;
+		height: auto;
+		padding: 5px;
+		padding-left: 10px;
+		border-bottom: 1px solid #33333333;
+		&:hover {
+			background-color: #33889933;
+			cursor: pointer;
+		}
+	}
+
 }
 
 .reader-container {
-
+	margin-left: $menu-container-width;
+	padding-left: 5px;
 }
+
+

@@ -1,6 +1,7 @@
 'use strict'
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MenuItem from './menu-item.component.js';
 
 
 class MenuComponent extends React.Component {
@@ -10,6 +11,7 @@ class MenuComponent extends React.Component {
 		super(props);
 
 		this.state = {
+			selectedArticle: this.props.articles[0],
 		}
 
 	}
@@ -17,14 +19,11 @@ class MenuComponent extends React.Component {
 	render() {
 		return (
 			<div className='menu-container'>
-				<ul>
-					{ [1, 2, 3, 4, 5].map((obj, i) => {
-							return (
-								<li key={i}>list item:{obj}</li>
-							)
-						}
+				{ this.props.articles.map((obj, i) => { return (
+						<MenuItem key={i} article={obj}
+							clickHandler={this.props.clickHandler}/>
 					)}
-				</ul>
+				)}
 			</div>
 		)
 	}
@@ -32,3 +31,4 @@ class MenuComponent extends React.Component {
 }
 
 export default MenuComponent;
+
