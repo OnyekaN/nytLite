@@ -2,10 +2,9 @@
 'use strict'
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Axios from 'axios';
 import MenuComponent from './menu.component';
 import ReaderComponent from './reader.component';
-
-const articlesJSON = require('../assets/articles.json');
 
 class ArticlesComponent extends React.Component {
 
@@ -24,13 +23,17 @@ class ArticlesComponent extends React.Component {
 
 	componentDidMount() {
 
-		let articles = [];
-		Object.keys(articlesJSON).forEach((key) => {
-			if ( articlesJSON[key].title.indexOf('Page Not Found') == -1 ) {
-				articles.push(articlesJSON[key]);
-			}
-		});
-		this.setState({ allArticles: articles });
+		let allArticles = [];
+		Axios.get('/api/articles')
+			.then(res => {
+				let articlesJSON = res.data;
+				Object.keys(articlesJSON).forEach((key) => {
+					allArticles.push(articlesJSON[key]);
+				});
+			}).then(() => {
+				this.setState({allArticles})
+				this.setState({currentArticle: allArticles[0]});
+			});
 
 	}
 

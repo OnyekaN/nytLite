@@ -21,11 +21,11 @@ class MenuItem extends React.Component {
 
 	render() {
 		let article = this.props.article;
-		let	date = (new Date(article.date)).toDateString();
+		let	date = (new Date(article.article_date)).toDateString();
 
 		return (
 			<div className="article-entry" onClick={this.handleClick}>
-				<p><b>{article.title}</b></p>
+				<p><b>{article.article_title}</b></p>
 				<p>{date}</p>
 			</div>
 		)

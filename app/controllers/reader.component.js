@@ -10,16 +10,14 @@ class ReaderComponent extends React.Component {
 		super(props);
 
 		this.state = {
-			markup: ''
+			articleMarkup: ''
 		}
 		this.createMarkup = this.createMarkup.bind(this);
 	}
 
 	componentWillReceiveProps(nextProps) {
 		if ( !!Object.keys(nextProps.article).length ) {
-			let href = nextProps.article.href.split('/');
-			href = 'articles/' + href[href.length - 1];
-			this.createMarkup(href);
+			this.createMarkup('articles/'+ nextProps.article.article_path);
 		}
 	}
 
@@ -28,15 +26,18 @@ class ReaderComponent extends React.Component {
 		axios.get(href)
 			.then(res => {
 				html = res.data;
-				this.setState({markup: html});
+				this.setState({articleMarkup: html});
 			});
 	}
 
 
 	render() {
+		let article = this.props.article;
 		return (
 			<div className="reader-container">
-				<div dangerouslySetInnerHTML={{__html: this.state.markup}} />
+				<h2 className="title">{article.article_title}</h2>
+				<h3 className="author">{article.article_author}</h3>
+				<div dangerouslySetInnerHTML={{__html: this.state.articleMarkup}} />
 			</div>
 		)
 	}
