@@ -11,24 +11,60 @@ body {
 
 .menu-container {
   float: left;
+  padding: 10px 20px 10px 0;
   position: absolute;
   overflow: scroll;
   height: 100vh;
   width: 200px;
-  background-color: #eee; }
-  .menu-container .article-entry {
+  background-color: #ffffff;
+  font-family: Times; }
+  .menu-container .mu-article-entry {
     width: 100%;
     min-height: 80px;
     height: auto;
     padding: 5px;
     padding-left: 10px;
-    border-bottom: 1px solid #33333333; }
-    .menu-container .article-entry:hover {
-      background-color: #33889933;
+    border-bottom: 1px solid #44444411;
+    transition: all 300ms ease;
+    font-family: Helvetica Neue; }
+    .menu-container .mu-article-entry:hover {
+      background-color: #3388cc22;
       cursor: pointer; }
+  .menu-container .mu-section {
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase; }
+  .menu-container .mu-title {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 5px; }
+  .menu-container .mu-date {
+    display: block;
+    font-family: Helvetica Neue;
+    font-weight: 100;
+    font-size: 0.8em; }
 
 .reader-container {
   margin-left: 200px;
-  padding: 0 20px 20px 20px; }
+  padding: 0 20px 20px 30px;
+  font-family: Times, serif; }
+  .reader-container .rdr-header {
+    margin: 50px 0 60px 0; }
+  .reader-container .rdr-title {
+    text-align: center;
+    font-size: 2em;
+    font-style: italic; }
+  .reader-container .rdr-author {
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold; }
+  .reader-container .rdr-article-body p {
+    text-indent: 35px;
+    color: #222222ff;
+    margin: 0 0 10px 0;
+    font-size: 1.2em; }
+  .reader-container .rdr-article-body a {
+    color: #444444ff; }
 
 /*# sourceMappingURL=main.css.map */

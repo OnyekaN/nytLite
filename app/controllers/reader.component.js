@@ -35,9 +35,12 @@ class ReaderComponent extends React.Component {
 		let article = this.props.article;
 		return (
 			<div className="reader-container">
-				<h2 className="title">{article.article_title}</h2>
-				<h3 className="author">{article.article_author}</h3>
-				<div dangerouslySetInnerHTML={{__html: this.state.articleMarkup}} />
+				<div className="rdr-header">
+					<p className="rdr-title">{article.article_title}</p>
+					<p className="rdr-author">{article.article_author}</p>
+				</div>
+				<div className="rdr-article-body"
+					dangerouslySetInnerHTML={{__html: this.state.articleMarkup}} />
 			</div>
 		)
 	}
