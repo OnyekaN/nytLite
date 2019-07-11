@@ -1,5 +1,11 @@
 body {
-  height: 100%; }
+  height: 100%;
+  margin: 0 0 0 0; }
+
+.header {
+  width: 100%;
+  height: 25px;
+  border-bottom: 1px solid #11111111; }
 
 .main-container {
   height: 100%;
@@ -7,23 +13,24 @@ body {
 
 .articles-container {
   height: 100vh;
-  overflow: scroll; }
+  overflow: scroll;
+  display: flex;
+  flex-direction: row; }
 
 .menu-container {
-  float: left;
-  padding: 10px 20px 10px 0;
-  position: absolute;
+  flex-shrink: 0;
+  width: 180px;
+  padding: 0px 25px 0px 0;
   overflow: scroll;
   height: 100vh;
-  width: 200px;
   background-color: #ffffff;
+  border-right: 1px solid #11111111;
   font-family: Times; }
   .menu-container .mu-article-entry {
     width: 100%;
     min-height: 80px;
     height: auto;
-    padding: 5px;
-    padding-left: 10px;
+    padding: 10px 10px 10px 10px;
     border-bottom: 1px solid #44444411;
     transition: all 300ms ease;
     font-family: Helvetica Neue; }
@@ -33,9 +40,11 @@ body {
   .menu-container .mu-section {
     display: block;
     margin-bottom: 5px;
+    font-size: 0.7em;
     text-transform: uppercase; }
   .menu-container .mu-title {
     display: block;
+    font-size: 0.8em;
     font-style: italic;
     font-weight: bold;
     margin-bottom: 5px; }
@@ -43,19 +52,26 @@ body {
     display: block;
     font-family: Helvetica Neue;
     font-weight: 100;
-    font-size: 0.8em; }
+    font-size: 0.7em; }
 
 .reader-container {
-  margin-left: 200px;
-  padding: 0 20px 20px 30px;
+  height: 100vh;
+  overflow: scroll;
+  padding: 0 20px 0px 30px;
   font-family: Times, serif; }
   .reader-container .rdr-header {
-    margin: 50px 0 60px 0; }
+    margin: 10px 0 10px 0;
+    padding: 10px 10px 0 10px;
+    min-height: 200px; }
   .reader-container .rdr-title {
     text-align: center;
     font-size: 2em;
     font-style: italic; }
   .reader-container .rdr-author {
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold; }
+  .reader-container .rdr-date {
     text-align: center;
     font-size: 1em;
     font-weight: bold; }

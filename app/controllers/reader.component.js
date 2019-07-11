@@ -38,6 +38,7 @@ class ReaderComponent extends React.Component {
 				<div className="rdr-header">
 					<p className="rdr-title">{article.article_title}</p>
 					<p className="rdr-author">{article.article_author}</p>
+					<p className="rdr-date">{(new Date(article.article_date)).toDateString()}</p>
 				</div>
 				<div className="rdr-article-body"
 					dangerouslySetInnerHTML={{__html: this.state.articleMarkup}} />
