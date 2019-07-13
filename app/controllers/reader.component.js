@@ -12,7 +12,7 @@ class ReaderComponent extends React.Component {
 		this.state = {
 			articleMarkup: '',
 			dateOptions: {
-        weekday: 'long',
+        weekday: 'short',
         year: 'numeric',
         month: 'long',
         day: 'numeric'
@@ -39,11 +39,12 @@ class ReaderComponent extends React.Component {
 
 	render() {
 		let article = this.props.article,
-				article_date = (new Date(article.article_date))
-												.toLocaleString('en-us', this.state.dateOptions),
+				article_date = article.article_date ? (new Date(article.article_date))
+												.toLocaleString('en-us', this.state.dateOptions) : "",
 				article_href = `https://nytimes.com/section/
 											${article.article_section}/
 											${article.article_path}`;
+			console.log(article.article_date);
 		return (
 			<div className="reader-container">
 				<div className="rdr-header">

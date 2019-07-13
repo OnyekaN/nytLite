@@ -17,9 +17,6 @@ module.exports = {
 		path: path.join(__dirname, '/app/assets/js/'),
 		filename: 'bundle.js',
 	},
-	plugins: [
-		new webpack.HotModuleReplacementPlugin()
-	],
 	resolve: {
 		extensions: ['*', '.js', '.jsx']
 	},

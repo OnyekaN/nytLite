@@ -31,17 +31,36 @@ class ArticlesComponent extends React.Component {
 					allArticles.push(articlesJSON[key]);
 				});
 			}).then(() => {
+				allArticles.sort(this.articlesSectionSort);
 				this.setState({allArticles})
 				this.setState({currentArticle: allArticles[0]});
 			});
 
 	}
 
-	onArticleSelect(article) {
+	articlesDateSort(a, b) {
+		if ( a.article_date > b.article_date ) {
+			return -1;
+		} if ( a.article_date < b.article_date ) {
+			return 1;
+		}
+		return 0;
+	}
+
+	articlesSectionSort(a, b) {
+		if ( a.article_section < b.article_section ) {
+			return -1;
+		} if ( a.article_section > b.article_section ) {
+			return 1;
+		}
+		return 0;
+	}
+
+	onArticleSelect(currentArticle) {
 		if ( false ) {
 			return
 		} else {
-			this.setState({ currentArticle: article });
+			this.setState({ currentArticle: currentArticle	});
 		}
 	}
 

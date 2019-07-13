@@ -28,7 +28,7 @@ body {
   font-family: Times; }
   .menu-container .mu-article-entry {
     width: 100%;
-    min-height: 80px;
+    min-height: 60px;
     height: auto;
     padding: 10px 10px 10px 10px;
     border-bottom: 1px solid #44444411;
@@ -89,6 +89,16 @@ body {
       color: #444444ff; }
   .reader-container .rdr-footer {
     padding: 30px 30px 30px 30px;
-    font-size: 0.7em; }
+    font-size: 0.7em;
+    animation: fadein 2s; }
+    .reader-container .rdr-footer a {
+      color: #3388cc; }
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 /*# sourceMappingURL=main.css.map */
