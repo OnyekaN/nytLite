@@ -57,7 +57,7 @@ body {
 .reader-container {
   height: 100vh;
   overflow: scroll;
-  padding: 0 20px 0px 30px;
+  padding: 0 50px 0 50px;
   font-family: Times, serif; }
   .reader-container .rdr-header {
     margin: 10px 0 10px 0;
@@ -66,21 +66,29 @@ body {
   .reader-container .rdr-title {
     text-align: center;
     font-size: 2em;
-    font-style: italic; }
+    font-style: italic;
+    font-weight: 700; }
   .reader-container .rdr-author {
     text-align: center;
-    font-size: 1em;
-    font-weight: bold; }
+    font-size: 1.3em;
+    font-weight: 400;
+    margin-bottom: 12px; }
   .reader-container .rdr-date {
     text-align: center;
     font-size: 1em;
-    font-weight: bold; }
-  .reader-container .rdr-article-body p {
-    text-indent: 35px;
-    color: #222222ff;
-    margin: 0 0 10px 0;
-    font-size: 1.2em; }
-  .reader-container .rdr-article-body a {
-    color: #444444ff; }
+    font-weight: 100; }
+  .reader-container .rdr-article-body {
+    padding: 60px 30px 10px 30px;
+    text-align: justify; }
+    .reader-container .rdr-article-body p {
+      text-indent: 35px;
+      color: #222222ff;
+      margin: 0 0 10px 0;
+      font-size: 1.2em; }
+    .reader-container .rdr-article-body a {
+      color: #444444ff; }
+  .reader-container .rdr-footer {
+    padding: 30px 30px 30px 30px;
+    font-size: 0.7em; }
 
 /*# sourceMappingURL=main.css.map */

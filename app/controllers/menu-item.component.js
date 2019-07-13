@@ -10,6 +10,11 @@ class MenuItem extends React.Component {
 		super(props);
 
 		this.state = {
+			dateOptions: {
+			 	year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			}
 		}
 
 		this.handleClick = this.handleClick.bind(this);
@@ -22,7 +27,7 @@ class MenuItem extends React.Component {
 	render() {
 		let article = this.props.article;
 		let	date = (new Date(article.article_date))
-								.toDateString().split(' ').slice(1).join(' ');
+								.toLocaleString('en-US', this.state.dateOptions);
 
 		return (
 			<div className="mu-article-entry" onClick={this.handleClick}>
