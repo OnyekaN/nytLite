@@ -18,6 +18,7 @@ class ArticlesComponent extends React.Component {
 		}
 
 		this.onArticleSelect = this.onArticleSelect.bind(this);
+		this.onArticleSort = this.onArticleSort.bind(this);
 
 	}
 
@@ -31,11 +32,19 @@ class ArticlesComponent extends React.Component {
 					allArticles.push(articlesJSON[key]);
 				});
 			}).then(() => {
-				allArticles.sort(this.articlesSectionSort);
+				allArticles.sort(this.articlesDateSort);
 				this.setState({allArticles})
 				this.setState({currentArticle: allArticles[0]});
 			});
 
+	}
+
+	onArticleSelect(currentArticle) {
+		if ( false ) {
+			return
+		} else {
+			this.setState({ currentArticle });
+		}
 	}
 
 	articlesDateSort(a, b) {
@@ -56,11 +65,17 @@ class ArticlesComponent extends React.Component {
 		return 0;
 	}
 
-	onArticleSelect(currentArticle) {
+	onArticleSort(sortOption) {
 		if ( false ) {
 			return
-		} else {
-			this.setState({ currentArticle: currentArticle	});
+		} else if ( sortOption === 'Section' ) {
+			this.setState({
+				allArticles: this.state.allArticles.sort(this.articlesSectionSort)
+			});
+		} else if ( sortOption === 'Date' ) {
+			this.setState({
+				allArticles: this.state.allArticles.sort(this.articlesDateSort)
+			});
 		}
 	}
 
@@ -68,7 +83,8 @@ class ArticlesComponent extends React.Component {
 		return (
 			<div className="articles-container">
 				<MenuComponent articles={this.state.allArticles}
-					clickHandler={this.onArticleSelect} />
+					selectHandler={this.onArticleSelect}
+					sortHandler={this.onArticleSort} />
 				<ReaderComponent article={this.state.currentArticle} />
 			</div>
 		);

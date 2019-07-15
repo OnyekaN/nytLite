@@ -44,7 +44,6 @@ class ReaderComponent extends React.Component {
 				article_href = `https://nytimes.com/section/
 											${article.article_section}/
 											${article.article_path}`;
-			console.log(article.article_date);
 		return (
 			<div className="reader-container">
 				<div className="rdr-header">

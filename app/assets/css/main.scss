@@ -32,6 +32,22 @@ body {
 	border-right: 1px solid #11111111;
 	font-family: Times;
 
+	.mu-sort {
+		height: 20px;
+		padding: 10px 10px 10px 10px;
+	}
+
+	.mu-sort-type {
+		width: 70px;
+		height: 20px;
+		cursor: pointer;
+		background-color: #fffffe;
+		&:focus {
+			outline: none;
+		}
+	}
+
+
 	.mu-article-entry {
 		width: 100%;
 		min-height: 60px;
