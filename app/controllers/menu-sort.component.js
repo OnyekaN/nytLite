@@ -30,6 +30,7 @@ class MenuSort extends React.Component {
 				<button className='mu-sort-type'
 					onClick={this.sortMenuItems}>
 					{this.state.sortOptions[this.state.sortIndex]}
+					&nbsp; ▼
 				</button>
 			</div>
 		)

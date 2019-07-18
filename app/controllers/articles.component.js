@@ -48,18 +48,18 @@ class ArticlesComponent extends React.Component {
 	}
 
 	articlesDateSort(a, b) {
-		if ( a.article_date > b.article_date ) {
+		if ( a.date > b.date ) {
 			return -1;
-		} if ( a.article_date < b.article_date ) {
+		} if ( a.date < b.date ) {
 			return 1;
 		}
 		return 0;
 	}
 
 	articlesSectionSort(a, b) {
-		if ( a.article_section < b.article_section ) {
+		if ( a.section < b.section ) {
 			return -1;
-		} if ( a.article_section > b.article_section ) {
+		} if ( a.section > b.section ) {
 			return 1;
 		}
 		return 0;

@@ -24,7 +24,7 @@ router.get('/api/articles', (req, res, next) => {
       res.status(500).json({success: false, data:err});
     }
 
-	querySQL = `SELECT * FROM articles ORDER BY article_id ASC;`;
+	querySQL = `SELECT * FROM articles ORDER BY id ASC;`;
 
     client.query(querySQL)
       .then((response) => {

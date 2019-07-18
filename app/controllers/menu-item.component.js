@@ -26,13 +26,13 @@ class MenuItem extends React.Component {
 
 	render() {
 		let article = this.props.article;
-		let	date = (new Date(article.article_date))
+		let	date = (new Date(article.date))
 								.toLocaleString('en-US', this.state.dateOptions);
 
 		return (
-			<div className="mu-article-entry" onClick={this.handleClick}>
-				<span className="mu-section">{article.article_section}</span>
-				<span className="mu-title">{article.article_title}</span>
+			<div className="mu-item-entry" onClick={this.handleClick}>
+				<span className="mu-section">{article.section}</span>
+				<span className="mu-title">{article.title}</span>
 				<span className="mu-date">{date}</span>
 			</div>
 		)

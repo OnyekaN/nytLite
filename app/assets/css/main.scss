@@ -24,8 +24,8 @@ body {
 
 .menu-container {
 	flex-shrink: 0;
-	width: 180px;
-	padding: 0px 25px 0px 0;
+	width: 200px;
+	padding: 0 20px 0 0;
 	overflow: scroll;
 	height: 100vh;
 	background-color: #ffffff;
@@ -33,26 +33,29 @@ body {
 	font-family: Times;
 
 	.mu-sort {
-		height: 20px;
+		height: 30px;
 		padding: 10px 10px 10px 10px;
 	}
 
 	.mu-sort-type {
-		width: 70px;
-		height: 20px;
+		width: 80px;
+		height: 30px;
 		cursor: pointer;
+		font-family: Helvetica Neue, sans-serif;
+		font-weight: 100;
+		border: 1px solid #3388cc33;
+		border-radius: 5px;
 		background-color: #fffffe;
 		&:focus {
 			outline: none;
 		}
 	}
 
-
-	.mu-article-entry {
+	.mu-item-entry {
 		width: 100%;
 		min-height: 60px;
 		height: auto;
-		padding: 10px 10px 10px 10px;
+		padding: 10px 10px 10px 20px;
 		border-bottom: 1px solid #44444411;
 		transition: all 300ms ease;
 		font-family: Helvetica Neue;
@@ -126,6 +129,7 @@ body {
 			color: #222222ff;
 			margin: 0 0 10px 0;
 			font-size: 1.2em;
+			font-weight: 100;
 	 	}
 		a { color: #444444ff; }
 	}

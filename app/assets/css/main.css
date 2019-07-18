@@ -19,32 +19,36 @@ body {
 
 .menu-container {
   flex-shrink: 0;
-  width: 180px;
-  padding: 0px 25px 0px 0;
+  width: 200px;
+  padding: 0 20px 0 0;
   overflow: scroll;
   height: 100vh;
   background-color: #ffffff;
   border-right: 1px solid #11111111;
   font-family: Times; }
   .menu-container .mu-sort {
-    height: 20px;
+    height: 30px;
     padding: 10px 10px 10px 10px; }
   .menu-container .mu-sort-type {
-    width: 70px;
-    height: 20px;
+    width: 80px;
+    height: 30px;
     cursor: pointer;
+    font-family: Helvetica Neue, sans-serif;
+    font-weight: 100;
+    border: 1px solid #3388cc33;
+    border-radius: 5px;
     background-color: #fffffe; }
     .menu-container .mu-sort-type:focus {
       outline: none; }
-  .menu-container .mu-article-entry {
+  .menu-container .mu-item-entry {
     width: 100%;
     min-height: 60px;
     height: auto;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 20px;
     border-bottom: 1px solid #44444411;
     transition: all 300ms ease;
     font-family: Helvetica Neue; }
-    .menu-container .mu-article-entry:hover {
+    .menu-container .mu-item-entry:hover {
       background-color: #3388cc22;
       cursor: pointer; }
   .menu-container .mu-section {
@@ -94,7 +98,8 @@ body {
       text-indent: 35px;
       color: #222222ff;
       margin: 0 0 10px 0;
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      font-weight: 100; }
     .reader-container .rdr-article-body a {
       color: #444444ff; }
   .reader-container .rdr-footer {
