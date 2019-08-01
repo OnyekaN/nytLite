@@ -56,7 +56,7 @@ class ReaderComponent extends React.Component {
 					dangerouslySetInnerHTML={{__html: this.state.articleMarkup}} />
 				<div className="rdr-footer">
 					<p align="center">
-						Read <i>{article.title}</i> and other <b>New York Times</b> articles on the <a href="nytimes.com">NyTimes</a> website.
+						Read <i>{article.title}</i> and other <b>New York Times</b> articles on <a href="nytimes.com">The New York Times</a> website.
 					</p>
 				</div>
 			</div>

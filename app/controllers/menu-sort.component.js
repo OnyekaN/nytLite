@@ -10,10 +10,8 @@ class MenuSort extends React.Component {
 		super(props);
 
 		this.state = {
-			sections: ['all', 'business', 'health', 'politics', 'science',
-								'sports', 'tech', 'us', 'world'],
-			sortIndex: 0,
-			sortOptions: ['Date', 'Section'],
+			sections: ['all', 'business', 'health', 'opinion', 'politics',
+								'science', 'sports', 'technology', 'us', 'world'],
 		}
 
 		this.sortMenuItems = this.sortMenuItems.bind(this);

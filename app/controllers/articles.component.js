@@ -14,6 +14,7 @@ class ArticlesComponent extends React.Component {
 
 		this.state = {
 			allArticles: [],
+			displayArticles: [],
 			currentArticle: {},
 		}
 
@@ -33,7 +34,8 @@ class ArticlesComponent extends React.Component {
 				});
 			}).then(() => {
 				allArticles.sort(this.articlesDateSort);
-				this.setState({allArticles})
+				this.setState({allArticles});
+				this.setState({displayArticles: allArticles});
 				this.setState({currentArticle: allArticles[0]});
 			});
 
@@ -45,6 +47,11 @@ class ArticlesComponent extends React.Component {
 		} else {
 			this.setState({ currentArticle });
 		}
+	}
+
+	articlesSectionsFilter(section) {
+
+
 	}
 
 	articlesDateSort(a, b) {
@@ -66,17 +73,17 @@ class ArticlesComponent extends React.Component {
 	}
 
 	onArticleSort(sortOption) {
-		if ( false ) {
+		if ( false )
 			return
-		} console.log(sortOption);/*else if ( sortOption === 'Section' ) {
-			this.setState({
-				allArticles: this.state.allArticles.sort(this.articlesSectionSort)
-			});
-		} else if ( sortOption === 'Date' ) {
-			this.setState({
-				allArticles: this.state.allArticles.sort(this.articlesDateSort)
-			});
-		} */
+		let displayArticles = this.state.allArticles;
+		if ( sortOption === 'all' ) {
+			this.setState({displayArticles});
+		} else {
+			displayArticles = displayArticles.filter((a) => {
+				return a.section === sortOption;
+			})
+			this.setState({displayArticles})
+		}
 	}
 
 	menuMouseEnter() {
@@ -90,7 +97,7 @@ class ArticlesComponent extends React.Component {
 	render() {
 		return (
 			<div className="articles-container">
-				<MenuComponent articles={this.state.allArticles}
+				<MenuComponent articles={this.state.displayArticles}
 					selectHandler={this.onArticleSelect}
 					sortHandler={this.onArticleSort}
 					mouseEnterHandler={this.menuMouseEnter}
