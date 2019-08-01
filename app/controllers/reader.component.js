@@ -47,15 +47,17 @@ class ReaderComponent extends React.Component {
 		return (
 			<div className="reader-container">
 				<div className="rdr-header">
+					<p className="rdr-section">{article.section}</p>
 					<p className="rdr-title">{article.title}</p>
-					<p className="rdr-author">{article.author}</p>
+					<p className="rdr-author">By {article.author}</p>
 					<p className="rdr-date">{article_date}</p>
 				</div>
 				<div className="rdr-article-body"
 					dangerouslySetInnerHTML={{__html: this.state.articleMarkup}} />
 				<div className="rdr-footer">
-					Read: <a className="rdr-href" href={article_href} target='_blank'>
-						{article.title}</a> on the <a href="nytimes.com">NyTimes</a> website.
+					<p align="center">
+						Read <i>{article.title}</i> and other <b>New York Times</b> articles on the <a href="nytimes.com">NyTimes</a> website.
+					</p>
 				</div>
 			</div>
 		)

@@ -68,7 +68,7 @@ class ArticlesComponent extends React.Component {
 	onArticleSort(sortOption) {
 		if ( false ) {
 			return
-		} else if ( sortOption === 'Section' ) {
+		} console.log(sortOption);/*else if ( sortOption === 'Section' ) {
 			this.setState({
 				allArticles: this.state.allArticles.sort(this.articlesSectionSort)
 			});
@@ -76,7 +76,15 @@ class ArticlesComponent extends React.Component {
 			this.setState({
 				allArticles: this.state.allArticles.sort(this.articlesDateSort)
 			});
-		}
+		} */
+	}
+
+	menuMouseEnter() {
+		console.log('enter');
+	}
+
+	menuMouseLeave() {
+		console.log('leave');
 	}
 
 	render() {
@@ -84,7 +92,10 @@ class ArticlesComponent extends React.Component {
 			<div className="articles-container">
 				<MenuComponent articles={this.state.allArticles}
 					selectHandler={this.onArticleSelect}
-					sortHandler={this.onArticleSort} />
+					sortHandler={this.onArticleSort}
+					mouseEnterHandler={this.menuMouseEnter}
+					mouseLeaveHandler={this.menuMouseLeave}
+			/>
 				<ReaderComponent article={this.state.currentArticle} />
 			</div>
 		);

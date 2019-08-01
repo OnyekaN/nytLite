@@ -10,28 +10,28 @@ class MenuSort extends React.Component {
 		super(props);
 
 		this.state = {
-			sortOptions: ['Date', 'Section'],
+			sections: ['all', 'business', 'health', 'politics', 'science',
+								'sports', 'tech', 'us', 'world'],
 			sortIndex: 0,
+			sortOptions: ['Date', 'Section'],
 		}
 
 		this.sortMenuItems = this.sortMenuItems.bind(this);
 	}
 
-	sortMenuItems() {
-		let sortIndex = ++this.state.sortIndex % this.state.sortOptions.length;
-		this.props.clickHandler(this.state.sortOptions[sortIndex]);
-		this.setState({ sortIndex });
-
+	sortMenuItems(event) {
+		this.props.clickHandler(event.target.value);
 	}
 
 	render() {
 		return (
 			<div className='mu-sort'>
-				<button className='mu-sort-type'
-					onClick={this.sortMenuItems}>
-					{this.state.sortOptions[this.state.sortIndex]}
-					&nbsp; ▼
-				</button>
+				<select className='mu-section-filter'
+					onChange={this.sortMenuItems}>
+					{ this.state.sections.map((obj, i) => { return (
+						<option value={obj} key={i}>{obj}</option>
+					)})}
+				</select>
 			</div>
 		)
 	}

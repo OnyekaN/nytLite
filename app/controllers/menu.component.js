@@ -13,13 +13,27 @@ class MenuComponent extends React.Component {
 
 		this.state = {
 			selectedArticle: this.props.articles[0],
+			showMenu: 'show',
 		}
 
+		this.onMouseEnter = this.onMouseEnter.bind(this);
+		this.onMouseLeave = this.onMouseLeave.bind(this);
+
+	}
+
+	onMouseEnter() {
+		this.setState({showMenu: 'show'});
+	}
+
+	onMouseLeave() {
+		this.setState({showMenu: 'hide'});
 	}
 
 	render() {
 		return (
-			<div className='menu-container'>
+			<div className={'menu-container ' + this.state.showMenu}
+				onMouseEnter={this.onMouseEnter}
+				onMouseLeave={this.onMouseLeave}>
 				<MenuSort clickHandler={this.props.sortHandler}/>
 				<div className='mu-items-container'>
 					{ this.props.articles.map((obj, i) => { return (

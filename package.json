@@ -4,9 +4,10 @@
   "description": "Plaintext nyt",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --watch --mode=production",
     "devel": "node_modules/nodemon/bin/nodemon.js ./bin/www",
-    "watch": "webpack --watch",
-    "build": "webpack --watch --mode=production"
+    "sass": "sass --watch app/assets/css/main.scss",
+    "watch": "webpack --watch"
   },
   "author": "GQE",
   "license": "ISC",
