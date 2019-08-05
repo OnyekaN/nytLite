@@ -29,7 +29,8 @@ body {
   padding: 0 30px 0 0;
   position: fixed;
   transition: all 400ms ease-out;
-  width: 190px; }
+  width: 190px;
+  z-index: 1000; }
   .menu-container .mu-sort {
     height: 30px;
     padding: 10px 10px 10px 10px; }
@@ -58,47 +59,73 @@ body {
       background-color: #3388cc22; }
   .menu-container .mu-section {
     display: block;
-    margin-bottom: 10px;
+    font-family: Times, sans-serif;
     font-size: 0.7em;
+    margin-bottom: 1em;
     text-transform: uppercase; }
-  .menu-container .business {
-    color: #002266; }
-  .menu-container .health {
-    color: #66ffff; }
-  .menu-container .opinion {
-    color: #6600cc; }
-  .menu-container .politics {
-    color: #cc0000; }
-  .menu-container .science {
-    color: #009999; }
-  .menu-container .sports {
-    color: #ffb3ff; }
-  .menu-container .technology {
-    color: #009999; }
-  .menu-container .us {
-    color: #ff5050; }
-  .menu-container .world {
-    color: #4d0026; }
   .menu-container .mu-title {
     display: block;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.8em;
     font-style: italic;
     font-weight: bold;
-    margin-bottom: 10px; }
+    margin-bottom: .8em; }
+  .menu-container .mu-author {
+    display: block;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.7em;
+    margin-bottom: 1em; }
   .menu-container .mu-date {
     display: block;
-    font-family: Helvetica Neue;
     font-weight: 100;
-    font-size: 0.7em;
+    font-size: 0.6em;
     color: #333333; }
+  .menu-container .business {
+    color: #002266; }
+  .menu-container .health {
+    color: #333333; }
+  .menu-container .opinion {
+    color: #191919; }
+  .menu-container .politics {
+    color: #cc0000; }
+  .menu-container .science {
+    color: #222222; }
+  .menu-container .sports {
+    color: #303030; }
+  .menu-container .technology {
+    color: #282828; }
+  .menu-container .us {
+    color: #220066; }
+  .menu-container .world {
+    color: #4d0026; }
 
 .menu-container.show {
   opacity: 1; }
 
 .menu-container.hide {
-  opacity: 0;
+  opacity: 0.01;
   width: 20px;
   transition-delay: 100ms; }
+
+.menu-placeholder {
+  background-color: transparent;
+  border-right: 1px solid #11111111;
+  height: calc(100vh - 25px);
+  float: left;
+  position: fixed;
+  transition: all 500ms ease-out;
+  width: 60px; }
+  .menu-placeholder p {
+    color: #cccccc;
+    margin: 45vh 0 0 25px; }
+
+.menu-placeholder.mu-show {
+  opacity: 0.01;
+  visibility: hidden; }
+
+.menu-placholder.mu-hide {
+  opacity: 1;
+  visibility: visible; }
 
 .reader-container {
   height: 100vh;

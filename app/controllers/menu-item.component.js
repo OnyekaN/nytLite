@@ -33,7 +33,7 @@ class MenuItem extends React.Component {
 			<div className="mu-item-entry" onClick={this.handleClick}>
 				<span className={"mu-section " + article.section}>{article.section}</span>
 				<span className="mu-title">{article.title}</span>
-				<span className="mu-date">{date}</span>
+				<span className="mu-author">{article.author}</span>
 			</div>
 		)
 	}

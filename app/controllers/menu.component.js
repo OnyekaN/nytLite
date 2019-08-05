@@ -31,16 +31,23 @@ class MenuComponent extends React.Component {
 
 	render() {
 		return (
-			<div className={'menu-container ' + this.state.showMenu}
-				onMouseEnter={this.onMouseEnter}
-				onMouseLeave={this.onMouseLeave}>
-				<MenuSort clickHandler={this.props.sortHandler}/>
-				<div className='mu-items-container'>
-					{ this.props.articles.map((obj, i) => { return (
-							<MenuItem key={i} article={obj}
-								clickHandler={this.props.selectHandler}/>
+			<div>
+				<div className={'menu-container ' + this.state.showMenu}
+					onMouseEnter={this.onMouseEnter}
+					onMouseLeave={this.onMouseLeave}>
+					<MenuSort clickHandler={this.props.sortHandler}/>
+					<div className='mu-items-container'>
+						{ this.props.articles.map((obj, i) => { return (
+								<MenuItem key={i} article={obj}
+									clickHandler={this.props.selectHandler}/>
+							)}
 						)}
-					)}
+					</div>
+				</div>
+				<div className={'menu-placeholder mu-' + this.state.showMenu}>
+					<p>
+						<i className="fas fa-align-justify"></i>
+					</p>
 				</div>
 			</div>
 		)
