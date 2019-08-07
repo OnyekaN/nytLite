@@ -134,7 +134,7 @@ def prune_duplicate_entries():
 
 nyt_section_base_href = 'https://nytimes.com/section/'
 
-nyt_sections_pages = ['world', 'us', 'politics', 'business', 'technology',
+nyt_sections_pages = ['world', 'us', 'business', 'technology',
         'science', 'health', 'sports', 'opinion']
 
 # collect hrefs for current articles

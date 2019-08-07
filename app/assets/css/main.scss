@@ -25,7 +25,7 @@ $header-height: 25px;
 	flex-direction: row;
 }
 
-$menu-container-width: 190px;
+$menu-container-width: 200px;
 
 .menu-container {
 	background-color: #ffffffcc;
@@ -36,6 +36,7 @@ $menu-container-width: 190px;
 	overflow: scroll;
 	padding: 0 30px 0 0;
 	position: fixed;
+	top: 25px;
 	transition: all 400ms ease-out;
 	width: $menu-container-width;
 	z-index: 1000;
@@ -75,6 +76,7 @@ $menu-container-width: 190px;
 	}
 
 	.mu-section {
+		color: #002266;
 		display: block;
 		font-family: Times, sans-serif;
 		font-size: 0.7em;
@@ -120,6 +122,7 @@ $menu-container-width: 190px;
 
 .menu-container.show {
 	opacity: 1;
+	transition-delay: 500ms;
 }
 
 .menu-container.hide {
@@ -137,14 +140,15 @@ $menu-container-width: 190px;
 	transition: all 500ms ease-out;
 	width: 60px;
 	p {
-		color: #cccccc;
-		margin: 45vh 0 0 25px;
+		margin: 45vh 0 0 23px;
+		color: #3388cc44;
 	}
 }
 
 .menu-placeholder.mu-show {
 	opacity: 0.01;
 	visibility: hidden;
+	transition-delay: 200ms;
 }
 
 .menu-placholder.mu-hide {
@@ -155,12 +159,12 @@ $menu-container-width: 190px;
 .reader-container {
 	height: 100vh;
 	overflow: scroll;
-	padding: 0 200px 100px 200px;
+	padding: 0 20vw 100px 20vw;
 	margin: 0 0 0 50px;
 	font-family: 'Playfair Display', serif;
 
 	.rdr-header {
-		margin: 10px 0 10px 0;
+		margin: 0px 0 10px 0;
 		min-height: 200px;
 		padding: 10px 10px 0 10px;
 	}

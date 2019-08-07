@@ -13,7 +13,7 @@ class MenuComponent extends React.Component {
 
 		this.state = {
 			selectedArticle: this.props.articles[0],
-			showMenu: 'show',
+			showMenu: 'hide',
 		}
 
 		this.onMouseEnter = this.onMouseEnter.bind(this);

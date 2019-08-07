@@ -49,11 +49,6 @@ class ArticlesComponent extends React.Component {
 		}
 	}
 
-	articlesSectionsFilter(section) {
-
-
-	}
-
 	articlesDateSort(a, b) {
 		if ( a.date > b.date ) {
 			return -1;
@@ -72,6 +67,19 @@ class ArticlesComponent extends React.Component {
 		return 0;
 	}
 
+	onDateFilter(weeks) {
+		if ( false ) {
+			return;
+		}
+		let displayArticles = this.state.allArticles.filter((a) => {
+					let today = Date.now(),
+							range = 1000 * 60 * 60 * 24 * 7 * weeks,
+							articleDate = new Date(a.date);
+					if ( today - articleDate <= range )
+						return a;
+		});
+	}
+
 	onArticleSort(sortOption) {
 		if ( false )
 			return
@@ -82,16 +90,9 @@ class ArticlesComponent extends React.Component {
 			displayArticles = displayArticles.filter((a) => {
 				return a.section === sortOption;
 			})
+			displayArticles = displayArticles.sort(this.articlesDateSort);
 			this.setState({displayArticles})
 		}
-	}
-
-	menuMouseEnter() {
-		console.log('enter');
-	}
-
-	menuMouseLeave() {
-		console.log('leave');
 	}
 
 	render() {
@@ -100,6 +101,7 @@ class ArticlesComponent extends React.Component {
 				<MenuComponent articles={this.state.displayArticles}
 					selectHandler={this.onArticleSelect}
 					sortHandler={this.onArticleSort}
+					dateHandler={this.onDateFilter}
 					mouseEnterHandler={this.menuMouseEnter}
 					mouseLeaveHandler={this.menuMouseLeave}
 			/>

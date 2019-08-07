@@ -18,7 +18,12 @@ class ReaderComponent extends React.Component {
         day: 'numeric'
       }
 		}
+		this.myRef = React.createRef();
 		this.createMarkup = this.createMarkup.bind(this);
+	}
+
+	componentDidUpdate() {
+		this.myRef.current.scrollTo(0, 0);
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -45,7 +50,7 @@ class ReaderComponent extends React.Component {
 											${article.section}/
 											${article.path}`;
 		return (
-			<div className="reader-container">
+			<div className="reader-container" ref={this.myRef}>
 				<div className="rdr-header">
 					<p className="rdr-section">{article.section}</p>
 					<p className="rdr-title">{article.title}</p>
