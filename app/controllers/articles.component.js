@@ -19,7 +19,8 @@ class ArticlesComponent extends React.Component {
 		}
 
 		this.onArticleSelect = this.onArticleSelect.bind(this);
-		this.onArticleSort = this.onArticleSort.bind(this);
+		this.onDateFilter = this.onDateFilter.bind(this);
+		this.onSectionSort = this.onSectionSort.bind(this);
 
 	}
 
@@ -58,15 +59,6 @@ class ArticlesComponent extends React.Component {
 		return 0;
 	}
 
-	articlesSectionSort(a, b) {
-		if ( a.section < b.section ) {
-			return -1;
-		} if ( a.section > b.section ) {
-			return 1;
-		}
-		return 0;
-	}
-
 	onDateFilter(weeks) {
 		if ( false ) {
 			return;
@@ -78,9 +70,10 @@ class ArticlesComponent extends React.Component {
 					if ( today - articleDate <= range )
 						return a;
 		});
+		this.setState({displayArticles});
 	}
 
-	onArticleSort(sortOption) {
+	onSectionSort(sortOption) {
 		if ( false )
 			return
 		let displayArticles = this.state.allArticles;
@@ -99,11 +92,11 @@ class ArticlesComponent extends React.Component {
 		return (
 			<div className="articles-container">
 				<MenuComponent articles={this.state.displayArticles}
-					selectHandler={this.onArticleSelect}
-					sortHandler={this.onArticleSort}
 					dateHandler={this.onDateFilter}
 					mouseEnterHandler={this.menuMouseEnter}
 					mouseLeaveHandler={this.menuMouseLeave}
+					selectHandler={this.onArticleSelect}
+					sectionHandler={this.onSectionSort}
 			/>
 				<ReaderComponent article={this.state.currentArticle} />
 			</div>

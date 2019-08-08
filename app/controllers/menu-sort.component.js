@@ -12,24 +12,38 @@ class MenuSort extends React.Component {
 		this.state = {
 			sections: ['all', 'business', 'health', 'opinion', 'science',
 									'sports', 'technology', 'us', 'world'],
+			weeks: 2,
 		}
 
-		this.sortMenuItems = this.sortMenuItems.bind(this);
+		this.onDatesSort = this.onDatesSort.bind(this);
+		this.onSectionSort = this.onSectionSort.bind(this);
 	}
 
-	sortMenuItems(event) {
-		this.props.clickHandler(event.target.value);
+	onDatesSort(event) {
+		this.props.dateHandler(event.target.value);
+		this.setState({ weeks: event.target.value });
+	}
+
+	onSectionSort(event) {
+		this.props.sectionHandler(event.target.value);
 	}
 
 	render() {
 		return (
 			<div className='mu-sort'>
-				<select className='mu-section-filter'
-					onChange={this.sortMenuItems}>
-					{ this.state.sections.map((obj, i) => { return (
-						<option value={obj} key={i}>{obj}</option>
-					)})}
-				</select>
+				<div>
+					<select className='mu-section-filter'
+						onChange={this.onSectionSort}>
+						{ this.state.sections.map((obj, i) => { return (
+							<option value={obj} key={i}>{obj}</option>
+						)})}
+					</select>
+				</div>
+				<div>
+					<input type='range'	onInput={this.onDatesSort}
+						 defaultValue='2' min='1' max='8'/>
+					<p>No Weeks: {this.state.weeks}</p>
+				</div>
 			</div>
 		)
 	}

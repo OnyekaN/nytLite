@@ -35,7 +35,8 @@ class MenuComponent extends React.Component {
 				<div className={'menu-container ' + this.state.showMenu}
 					onMouseEnter={this.onMouseEnter}
 					onMouseLeave={this.onMouseLeave}>
-					<MenuSort clickHandler={this.props.sortHandler}/>
+					<MenuSort dateHandler={this.props.dateHandler}
+						sectionHandler={this.props.sectionHandler}/>
 					<div className='mu-items-container'>
 						{ this.props.articles.map((obj, i) => { return (
 								<MenuItem key={i} article={obj}
