@@ -93,8 +93,6 @@ class ArticlesComponent extends React.Component {
 			<div className="articles-container">
 				<MenuComponent articles={this.state.displayArticles}
 					dateHandler={this.onDateFilter}
-					mouseEnterHandler={this.menuMouseEnter}
-					mouseLeaveHandler={this.menuMouseLeave}
 					selectHandler={this.onArticleSelect}
 					sectionHandler={this.onSectionSort}
 			/>

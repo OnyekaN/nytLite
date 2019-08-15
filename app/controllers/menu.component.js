@@ -18,6 +18,7 @@ class MenuComponent extends React.Component {
 
 		this.onMouseEnter = this.onMouseEnter.bind(this);
 		this.onMouseLeave = this.onMouseLeave.bind(this);
+		this.onTouchClick = this.onTouchClick.bind(this);
 
 	}
 
@@ -27,6 +28,16 @@ class MenuComponent extends React.Component {
 
 	onMouseLeave() {
 		this.setState({showMenu: 'hide'});
+	}
+
+	onTouchClick() {
+		if ( this.state.showMenu === 'show' ) {
+			this.state.showMenu = 'hide';
+		} else if ( this.state.showMenu === 'hide' ) {
+			this.state.showMenue = 'show';
+		} else {
+			return false;
+		}
 	}
 
 	render() {
@@ -45,7 +56,8 @@ class MenuComponent extends React.Component {
 						)}
 					</div>
 				</div>
-				<div className={'menu-placeholder mu-' + this.state.showMenu}>
+				<div className={'menu-placeholder mu-' + this.state.showMenu}
+					onClick={this.onTouchClick}>
 					<p>
 						<i className="fas fa-align-justify"></i>
 					</p>
