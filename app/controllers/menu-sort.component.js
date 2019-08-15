@@ -10,9 +10,14 @@ class MenuSort extends React.Component {
 		super(props);
 
 		this.state = {
+			dateOptions: {
+				year:	'numeric',
+        month: 'long',
+        day: 'numeric'
+			},
+			days: 7,
 			sections: ['all', 'business', 'health', 'opinion', 'science',
 									'sports', 'technology', 'us', 'world'],
-			weeks: 2,
 		}
 
 		this.onDatesSort = this.onDatesSort.bind(this);
@@ -21,7 +26,7 @@ class MenuSort extends React.Component {
 
 	onDatesSort(event) {
 		this.props.dateHandler(event.target.value);
-		this.setState({ weeks: event.target.value });
+		this.setState({ days: event.target.value });
 	}
 
 	onSectionSort(event) {
@@ -29,9 +34,13 @@ class MenuSort extends React.Component {
 	}
 
 	render() {
+		let date = new Date(Date.now() - 1000 * 60 * 60 * 24 * this.state.days)
+								.toLocaleString('en-US', this.state.dateOptions)
+
 		return (
 			<div className='mu-sort'>
 				<div>
+					<h4>Section:</h4>
 					<select className='mu-section-filter'
 						onChange={this.onSectionSort}>
 						{ this.state.sections.map((obj, i) => { return (
@@ -40,9 +49,10 @@ class MenuSort extends React.Component {
 					</select>
 				</div>
 				<div>
+					<h4>Showing articles since:</h4>
+					<p>{date}</p>
 					<input type='range'	onInput={this.onDatesSort}
-						 defaultValue='2' min='1' max='8'/>
-					<p>No Weeks: {this.state.weeks}</p>
+						 defaultValue='7' min='7' max='60'/>
 				</div>
 			</div>
 		)

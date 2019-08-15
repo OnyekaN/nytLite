@@ -59,13 +59,13 @@ class ArticlesComponent extends React.Component {
 		return 0;
 	}
 
-	onDateFilter(weeks) {
+	onDateFilter(days) {
 		if ( false ) {
 			return;
 		}
 		let displayArticles = this.state.allArticles.filter((a) => {
 					let today = Date.now(),
-							range = 1000 * 60 * 60 * 24 * 7 * weeks,
+							range = 1000 * 60 * 60 * 24 * days,
 							articleDate = new Date(a.date);
 					if ( today - articleDate <= range )
 						return a;
