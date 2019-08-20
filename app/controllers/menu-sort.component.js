@@ -40,8 +40,8 @@ class MenuSort extends React.Component {
 		return (
 			<div className='mu-sort'>
 				<div>
-					<h4>Section:</h4>
-					<select className='mu-section-filter'
+					<h3 className='mu-sort-header'>Section:</h3>
+					<select className='mu-sort-select'
 						onChange={this.onSectionSort}>
 						{ this.state.sections.map((obj, i) => { return (
 							<option value={obj} key={i}>{obj}</option>
@@ -49,10 +49,14 @@ class MenuSort extends React.Component {
 					</select>
 				</div>
 				<div>
-					<h4>Showing articles since:</h4>
-					<p>{date}</p>
-					<input type='range'	onInput={this.onDatesSort}
-						 defaultValue='7' min='7' max='60'/>
+					<h3 className='mu-sort-header'>Showing articles from the last:</h3>
+					<select className='mu-sort-select'>
+						{ [2, 3, 4, 5, 6, 7, 8].map((obj, i) => { return (
+							<option value={obj} key={i}>{obj} Weeks</option>
+						)})}
+					</select>
+					<input className='mu-sort-range' type='range'
+						onInput={this.onDatesSort} defaultValue='7' min='7' max='60'/>
 				</div>
 			</div>
 		)
