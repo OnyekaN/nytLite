@@ -15,7 +15,15 @@ class MenuSort extends React.Component {
         month: 'long',
         day: 'numeric'
 			},
-			days: 7,
+			dates: [
+				{ value: 2, string: "Two Weeks" },
+				{ value: 3, string: "Three Weeks" },
+				{ value: 4, string: "Four Weeks" },
+				{ value: 5, string: "Five Weeks" },
+				{ value: 6, string: "Six Weeks" },
+				{ value: 7, string: "Seven Weeks" },
+				{ value: 8, string: "Eight Weeks" }
+			],
 			sections: ['all', 'business', 'health', 'opinion', 'science',
 									'sports', 'technology', 'us', 'world'],
 		}
@@ -26,7 +34,7 @@ class MenuSort extends React.Component {
 
 	onDatesSort(event) {
 		this.props.dateHandler(event.target.value);
-		this.setState({ days: event.target.value });
+		this.setState({ weeks: event.target.value });
 	}
 
 	onSectionSort(event) {
@@ -34,11 +42,11 @@ class MenuSort extends React.Component {
 	}
 
 	render() {
-		let date = new Date(Date.now() - 1000 * 60 * 60 * 24 * this.state.days)
+		let date = new Date(Date.now() - 1000 * 60 * 60 * 24 * 7)
 								.toLocaleString('en-US', this.state.dateOptions)
 
 		return (
-			<div className='mu-sort'>
+			<div className='mu-sort-container'>
 				<div>
 					<h3 className='mu-sort-header'>Section:</h3>
 					<select className='mu-sort-select'
@@ -49,14 +57,13 @@ class MenuSort extends React.Component {
 					</select>
 				</div>
 				<div>
-					<h3 className='mu-sort-header'>Showing articles from the last:</h3>
-					<select className='mu-sort-select'>
-						{ [2, 3, 4, 5, 6, 7, 8].map((obj, i) => { return (
-							<option value={obj} key={i}>{obj} Weeks</option>
-						)})}
+					<h3 className='mu-sort-header'>Showing articles from the past:</h3>
+					<select className='mu-sort-select'
+						onChange={this.onDatesSort}>
+						{ this.state.dates.map((obj, i) => { return (
+							<option value={obj.value} key={i}>{obj.string}</option>
+						)}) }
 					</select>
-					<input className='mu-sort-range' type='range'
-						onInput={this.onDatesSort} defaultValue='7' min='7' max='60'/>
 				</div>
 			</div>
 		)

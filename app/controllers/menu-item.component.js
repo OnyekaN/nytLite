@@ -12,7 +12,7 @@ class MenuItem extends React.Component {
 		this.state = {
 			dateOptions: {
 			 	year: 'numeric',
-				month: 'long',
+				month: 'short',
 				day: 'numeric'
 			}
 		}
@@ -31,9 +31,9 @@ class MenuItem extends React.Component {
 
 		return (
 			<div className="mu-item-entry" onClick={this.handleClick}>
-				<span className={"mu-section"}>{article.section}</span>
-				<span className="mu-title">{article.title}</span>
-				<span className="mu-author">{article.author}</span>
+				<h4 className={"mu-section"}>{article.section}</h4>
+				<h4 className="mu-title">{article.title}</h4>
+				<h4 className="mu-author">{article.author}, {date}</h4>
 			</div>
 		)
 	}

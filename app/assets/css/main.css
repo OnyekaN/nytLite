@@ -6,8 +6,8 @@ body {
   visibility: hidden; }
 
 .header {
-  border-bottom: 1px solid #11111111;
-  height: 25px;
+  border-bottom: 1px solid #11111122;
+  height: 0px;
   width: 100%; }
 
 .main-container {
@@ -21,52 +21,58 @@ body {
 
 .menu-container {
   background-color: #ffffffff;
-  border-right: 1px solid #11111111;
+  border-right: 1px solid #11111122;
   box-shadow: 0 0 50px -5px #cccccc22;
   font-family: Times;
-  height: calc(100vh - 26px);
+  height: 100vh;
   margin: 0 0 100px 0;
   overflow: scroll;
   position: fixed;
-  top: 26px;
   transition: all 400ms ease-out;
-  width: 400px;
+  width: 25em;
   z-index: 1000; }
-  .menu-container .mu-sort {
-    margin: 0 0 1em 0;
-    min-height: 80px;
-    width: 380px;
-    padding: 10px 10px 10px 10px; }
+  .menu-container .mu-sort-container {
+    border-bottom: 1px solid #11111122;
+    border-top: 1px solid #11111122;
+    height: auto;
+    margin: 2em 0 0 0;
+    min-height: 100px;
+    min-width: 300px;
+    overflow: hidden;
+    padding: 2em 2em 2em 2em;
+    white-space: nowrap;
+    width: auto; }
   .menu-container .mu-sort-header {
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 1.5em;
-    margin: 1em 1em 1em .5em; }
+    font-weight: 100;
+    margin: .5em .5em .5em .5em; }
   .menu-container .mu-sort-select {
-    background-image: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-color: #eeeeeeee;
     border: 1px solid #999;
-    border-radius: 5px;
     color: black;
-    height: 50px;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 1.2em;
-    font-weight: 700;
+    font-size: 1.25em;
+    font-weight: 400;
+    height: 50px;
     margin: 0 1em .5em .5em;
-    padding: .6em 1.4em .5em .8em;
+    padding: .5em 1.5em .5em .75em;
     text-transform: capitalize;
-    width: 200px; }
+    width: 180px; }
+    .menu-container .mu-sort-select:focus {
+      outline: none; }
   .menu-container .mu-sort-date {
     font-family: serif;
     margin: 0 1em 1em 1em; }
   .menu-container .mu-items-container {
-    width: 380px; }
+    width: 25em; }
   .menu-container .mu-item-entry {
     border-bottom: 1px solid #44444411;
-    border-right: 1px solid #44444411;
     height: auto;
     font-family: Helvetica Neue, sans-serif;
-    min-height: 60px;
+    min-height: 100px;
     overflow-y: scroll;
-    padding: 1.5em 1em 1em 2em;
+    padding: 2em 3em 2em 3em;
     transition: all 300ms ease;
     white-space: wrap;
     width: auto; }
@@ -77,28 +83,27 @@ body {
     display: block;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.5em;
-    margin-bottom: .3em;
+    margin: .25em .25em .25em .25em;
     text-transform: uppercase; }
   .menu-container .mu-title {
     display: block;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.5em;
+    font-size: 2em;
     font-style: italic;
     font-weight: bold;
-    margin-bottom: .3em; }
+    margin: .25em .25em .25em .25em; }
   .menu-container .mu-author {
     color: #000000;
-    display: block;
-    font-family: serif;
-    font-size: 1.3em;
+    font-family: 'Palatino', serif;
+    font-size: 1.5em;
     font-weight: 100;
-    margin-bottom: 1em;
+    margin: .25em .25em .25em .25em;
     text-transform: capitalize; }
   .menu-container .mu-date {
-    display: block;
+    color: #333333;
+    font-size: 1.25em;
     font-weight: 100;
-    font-size: 0.6em;
-    color: #333333; }
+    margin: .25em .25em .25em .25em; }
   .menu-container .business {
     color: #002266; }
   .menu-container .health {
@@ -131,16 +136,21 @@ body {
 
 .menu-placeholder {
   background-color: transparent;
-  border-right: 1px solid #11111111;
-  height: calc(100vh - 25px);
+  border-right: 1px solid #11111122;
+  height: calc(100vh);
   float: left;
   cursor: pointer;
   position: fixed;
-  transition: all 500ms ease-out;
-  width: 60px; }
-  .menu-placeholder p {
-    margin: 45vh 0 0 23px;
-    color: #3388cc44; }
+  transition: all 400ms ease-out;
+  width: 100px;
+  -webkit-tap-highlight-color: transparent; }
+  .menu-placeholder .mu-icon {
+    color: #3388cc99;
+    color: #11111122;
+    left: calc(50% - 8px);
+    position: absolute;
+    top: calc(50% - 8px);
+    transform: scale(1.5); }
 
 .menu-placeholder.mu-show {
   opacity: 0.01;
@@ -149,6 +159,7 @@ body {
 
 .menu-placholder.mu-hide {
   opacity: 1;
+  transition-delay: 300ms;
   visibility: visible; }
 
 .menu-background {
@@ -168,13 +179,13 @@ body {
 .reader-container {
   font-family: 'Playfair Display', serif;
   height: 100vh;
-  margin: 50px 0 0 50px;
+  margin: 3em 0 3em 0;
   overflow: scroll;
   padding: 0 20vw 100px 20vw; }
   .reader-container .rdr-header {
-    margin: 0px 0 10px 0;
+    margin: 0 0 1em 0;
     min-height: 200px;
-    padding: 10px 10px 10px 10px; }
+    padding: 1em 1em 1em 1em; }
   .reader-container .rdr-section {
     font-size: 1em;
     text-align: center;
@@ -183,30 +194,31 @@ body {
     font-size: 2em;
     font-style: italic;
     font-weight: 700;
+    margin: 2em 0 2em 0;
     text-align: center; }
   .reader-container .rdr-author {
     font-family: Helvetica, sans-serif;
     font-size: 1em;
     font-weight: 100;
-    margin: 30px 0 30px 0;
+    margin: 2em 0 2em 0;
     text-align: center; }
   .reader-container .rdr-date {
-    color: #777777;
+    color: #000;
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: .8em;
+    font-size: .75em;
     font-weight: 100;
-    margin: 30px 0 30px 0;
+    margin: 2em 0 2em 0;
     text-align: center; }
   .reader-container .rdr-article-body {
-    margin: 40px 0 40px 0;
-    padding: 0px 0px 10px 0px;
+    margin: 3em 0 3em 0;
+    padding: 0 0 1em 0;
     text-align: justify; }
     .reader-container .rdr-article-body p {
       color: #000;
       font-size: 1em;
       font-weight: 100;
-      margin: 1em 0 2em 0;
-      text-indent: 2em; }
+      margin: 2em 0 2em 0;
+      text-indent: 0; }
     .reader-container .rdr-article-body a {
       color: #444444ff; }
   .reader-container .rdr-footer {

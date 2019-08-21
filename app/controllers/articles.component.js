@@ -36,7 +36,7 @@ class ArticlesComponent extends React.Component {
 			}).then(() => {
 				allArticles.sort(this.articlesDateSort);
 				this.setState({allArticles});
-				this.setState({displayArticles: allArticles});
+				this.onDateFilter(2);
 				this.setState({currentArticle: allArticles[0]});
 			});
 
@@ -59,13 +59,13 @@ class ArticlesComponent extends React.Component {
 		return 0;
 	}
 
-	onDateFilter(days) {
+	onDateFilter(weeks) {
 		if ( false ) {
 			return;
 		}
 		let displayArticles = this.state.allArticles.filter((a) => {
 					let today = Date.now(),
-							range = 1000 * 60 * 60 * 24 * days,
+							range = 1000 * 60 * 60 * 24 * 7 * weeks,
 							articleDate = new Date(a.date);
 					if ( today - articleDate <= range )
 						return a;

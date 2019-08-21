@@ -38,7 +38,6 @@ class MenuComponent extends React.Component {
 		} else {
 			return false;
 		}
-		console.log(this.state.showMenu);
 	}
 
 	render() {
@@ -58,7 +57,7 @@ class MenuComponent extends React.Component {
 				</div>
 				<div className={'menu-placeholder mu-' + this.state.showMenu}
 					onClick={this.onTouchClick}>
-					<p><i className="fas fa-align-justify"></i></p>
+					<p className="mu-icon"><i className="fas fa-align-justify"></i></p>
 				</div>
 				<div className={'menu-background mu-' + this.state.showMenu}
 					onClick={this.onTouchClick}>
