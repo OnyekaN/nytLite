@@ -56,6 +56,13 @@ class MenuSort extends React.Component {
 						)})}
 					</select>
 				</div>
+			</div>
+		)
+	}
+
+}
+
+/*
 				<div>
 					<h3 className='mu-sort-header'>Showing articles from the past:</h3>
 					<select className='mu-sort-select'
@@ -65,10 +72,7 @@ class MenuSort extends React.Component {
 						)}) }
 					</select>
 				</div>
-			</div>
-		)
-	}
+*/
 
-}
 
 export default MenuSort;
