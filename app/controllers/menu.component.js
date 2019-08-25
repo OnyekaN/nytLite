@@ -23,11 +23,15 @@ class MenuComponent extends React.Component {
 	}
 
 	onMouseEnter() {
-		this.setState({showMenu: 'show'});
+		if ( this.state.showMenu === 'hide' ) {
+			this.setState({showMenu: 'show'});
+		}
 	}
 
 	onMouseLeave() {
-		this.setState({showMenu: 'hide'});
+		if ( this.state.showMenu === 'show' ) {
+			this.setState({showMenu: 'hide'});
+		}
 	}
 
 	onTouchClick() {
@@ -56,6 +60,7 @@ class MenuComponent extends React.Component {
 					</div>
 				</div>
 				<div className={'menu-placeholder mu-' + this.state.showMenu}
+					//onMouseEnter={this.onTouchClick}
 					onClick={this.onTouchClick}>
 					<p className="mu-icon"><i className="fas fa-align-justify"></i></p>
 				</div>
