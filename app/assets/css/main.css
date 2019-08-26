@@ -98,6 +98,9 @@ body {
     font-weight: 100;
     margin: .25em .25em .25em .25em; }
 
+.lg-menu-placeholder {
+  display: none; }
+
 .menu-placeholder {
   background-color: transparent;
   border-right: 3px solid #aaaaaa11;
@@ -135,10 +138,11 @@ body {
   visibility: visible; }
 
 .menu-background {
+  display: block;
   height: 100vh;
   position: fixed;
   width: 100vw;
-  z-index: 0; }
+  z-index: 1000; }
 
 .menu-background.mu-show {
   opacity: 1;
@@ -212,36 +216,39 @@ body {
   .menu-container {
     border-right: 1px solid #aaaaaa33;
     height: 100vh;
-    width: 25em; }
+    width: 22em; }
     .menu-container .mu-sort-container {
       border-bottom: 1px solid #aaaaaa33;
-      height: 10em;
+      height: 8em;
       margin: 0 0 0 0;
       white-space: nowrap;
-      width: 25em; }
+      width: 22em; }
     .menu-container .mu-sort-header {
       font-size: 1em;
       font-weight: 100;
-      margin: 2em 0 1em 2em;
+      margin: 2em 0 1em 4em;
       text-transform: uppercase; }
     .menu-container .mu-sort-select {
       border: 1px solid #11111122;
       font-size: 1em;
       font-weight: 400;
-      height: 2em;
-      margin: .5em 0 0 2em;
-      padding: .5em 1.5em .5em .75em;
+      height: 3em;
+      margin: 0 0 1em 4em;
+      min-width: 8em;
       width: auto; }
     .menu-container .mu-items-container {
-      height: calc(100vh - 10em);
-      top: 10em;
-      width: 25em; }
+      box-shadow: inset 0 0 3em -.5em #cccccc11;
+      height: calc(100vh - 8em);
+      top: 8em;
+      width: 22em; }
     .menu-container .mu-item-entry {
       border-bottom: 1px solid #aaaaaa33;
       height: auto;
       min-height: 5em;
       padding: 2em 3em 2em 3em;
       width: auto; }
+      .menu-container .mu-item-entry:hover, .menu-container .mu-item-entry:focus {
+        background: #3388cc22; }
     .menu-container .mu-section {
       font-size: 1em;
       margin: .25em .25em .25em .25em; }
@@ -260,11 +267,22 @@ body {
       margin: .25em .25em .25em .25em; }
 
   .menu-placeholder {
+    display: none; }
+
+  .lg-menu-placeholder {
+    background-color: transparent;
     border-right: 1px solid #aaaaaa33;
+    cursor: pointer;
+    display: block;
+    float: left;
     height: calc(100vh);
+    position: fixed;
+    transition: all 500ms ease-in;
     width: 5em; }
-    .menu-placeholder .mu-icon {
+    .lg-menu-placeholder .lg-mu-icon {
+      color: #aaaaaa33;
       left: calc(50% - .5em);
+      position: absolute;
       top: calc(50% - .5em);
       transform: scale(1.2); }
 
@@ -273,18 +291,26 @@ body {
 
   .menu-container.hide {
     transition-delay: 300ms;
-    width: 5em; }
+    width: 7em; }
+
+  .lg-menu-placeholder.mu-show {
+    opacity: 0.01;
+    visibility: hidden; }
+
+  .lg-menu-placholder.mu-hide {
+    opacity: 1;
+    visibility: visible; }
 
   .menu-background {
     height: 100vh;
     width: 100vw;
-    z-index: 0; }
+    z-index: -1000; }
 
   .reader-container {
     box-shadow: inset 0 0 2em -.5em #cccccc11;
     height: 100vh;
     margin: 0 0 0 2em;
-    margin-left: 5em;
+    margin-left: 7em;
     overflow: scroll;
     padding: 2em 8em 8em 8em; }
     .reader-container .rdr-header {

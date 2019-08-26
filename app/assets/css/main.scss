@@ -125,6 +125,7 @@ $mu-sort-margin: 2em;
 
 }
 
+.lg-menu-placeholder { display: none; }
 $menu-placeholder-width: 7em;
 .menu-placeholder {
 	background-color: transparent;
@@ -169,10 +170,11 @@ $menu-placeholder-width: 7em;
 }
 
 .menu-background {
+	display: block;
 	height: 100vh;
 	position: fixed;
 	width: 100vw;
-	z-index: 0;
+	z-index: 1000;
 }
 
 .menu-background.mu-show {
@@ -269,8 +271,8 @@ $menu-placeholder-width: 7em;
 		height: 100vh;
 	}
 
-	$lg-menu-container-width: 25em;
-	$lg-mu-sort-height: 10em;
+	$lg-menu-container-width: 22em;
+	$lg-mu-sort-height: 8em;
 	.menu-container {
 		border-right: 1px solid #aaaaaa33;
 		height: 100vh;
@@ -286,7 +288,7 @@ $menu-placeholder-width: 7em;
 		.mu-sort-header {
 			font-size: 1em;
 			font-weight: 100;
-			margin: 2em 0 1em 2em;
+			margin: 2em 0 1em 4em;
 			text-transform: uppercase;
 		}
 
@@ -294,13 +296,14 @@ $menu-placeholder-width: 7em;
 			border: 1px solid #11111122;
 			font-size: 1em;
 			font-weight: 400;
-			height: 2em;
-			margin: .5em 0 0 2em;
-			padding: .5em 1.5em .5em .75em;
+			height: 3em;
+			margin: 0 0 1em 4em;
+			min-width: 8em;
 			width: auto;
 		}
 
 		.mu-items-container {
+			box-shadow: inset 0 0 3em -.5em #cccccc11;
 			height: calc(100vh - #{$lg-mu-sort-height});
 			top: $lg-mu-sort-height;
 			width: $lg-menu-container-width;
@@ -312,6 +315,9 @@ $menu-placeholder-width: 7em;
 			min-height: 5em;
 			padding: 2em 3em 2em 3em;
 			width: auto;
+			&:hover, &:focus {
+				background: #3388cc22;
+			}
 		}
 
 		.mu-section {
@@ -340,13 +346,22 @@ $menu-placeholder-width: 7em;
 
 	}
 
-	$menu-placeholder-width: 5em;
-	.menu-placeholder {
+	.menu-placeholder { display: none; }
+	$lg-menu-placeholder-width: 5em;
+	.lg-menu-placeholder {
+		background-color: transparent;
 		border-right: 1px solid #aaaaaa33;
+		cursor: pointer;
+		display: block;
+		float: left;
 		height: calc(100vh);
-		width: $menu-placeholder-width;
-		.mu-icon {
+		position: fixed;
+		transition: all 500ms ease-in;
+		width: $lg-menu-placeholder-width;
+		.lg-mu-icon {
+			color: #aaaaaa33;
 			left: calc(50% - .5em);
+			position: absolute;
 			top: calc(50% - .5em);
 			transform: scale(1.2);
 		}
@@ -361,16 +376,19 @@ $menu-placeholder-width: 7em;
 		width: $menu-placeholder-width;
 	}
 
-	.menu-placeholder.mu-show {
+	.lg-menu-placeholder.mu-show {
+		opacity: 0.01;
+		visibility: hidden;
 	}
 
-	.menu-placholder.mu-hide {
+	.lg-menu-placholder.mu-hide {
+		opacity: 1;
+		visibility: visible;
 	}
-
 	.menu-background {
 		height: 100vh;
 		width: 100vw;
-		z-index: 0;
+		z-index: -1000;
 	}
 
 	.reader-container {
