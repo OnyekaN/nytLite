@@ -17,48 +17,48 @@ body {
 	flex-direction: row;
 }
 
-$menu-container-width: 25em;
-$mu-sort-height: 17em;
-$mu-sort-margin: 2em;
+$menu-container-width: 10em;
+$mu-sort-height: 8em;
+$mu-sort-margin: 0em;
 .menu-container {
 	background-color: #ffffffff;
-	border-right: 3px solid #aaaaaa11;
+	border-right: 1px solid #aaaaaa11;
 	height: 100vh;
 	position: fixed;
 	transition: all 100ms ease-in;
 	width: $menu-container-width;
 	z-index: 1000;
 	.mu-sort-container {
-		border-bottom: 1px solid #11111111;
-		border-top: 1px solid #11111111;
+		border-bottom: 1px solid #aaaaaa11;
+		border-top: 1px solid #aaaaaa11;
 		height: $mu-sort-height;
 		margin: 2em 0 0 0;
 		margin-top: $mu-sort-margin;
 		overflow: hidden;
 		position: absolute;
 		white-space: nowrap;
-		width: auto;
+		width: $menu-container-width;
 	}
 
 	.mu-sort-header {
 		color: #666666;
 		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 1.5em;
+		font-size: 1em;
 		font-weight: 100;
-		margin: 2em 0 1em 2em;
+		margin: 2em 0 0 1em;
 		text-transform: uppercase;
 	}
 
 	.mu-sort-select {
 		background-color: #eeeeee55;
-		border: 1px solid #11111122;
+		border: 1px solid #aaaaaa22;
 		color: #333333;
 		font-family: 'Helvetica', sans-serif;
-		font-size: 1.5em;
+		font-size: 1em;
 		font-weight: 400;
 		height: 3em;
-		margin: .5em 0 0 2em;
-		padding: .5em 1.5em .5em .75em;
+		margin: .5em 0 0 1em;
+		padding: .25em .75em .25em .5em;
 		text-transform: capitalize;
 		width: auto;
 		&:focus {
@@ -75,12 +75,12 @@ $mu-sort-margin: 2em;
 	}
 
 	.mu-item-entry {
-		border-bottom: 1px solid #11111111;
+		border-bottom: 1px solid #aaaaaa22;
 		height: auto;
 		font-family: Helvetica, sans-serif;
-		min-height: 7em;
+		min-height: 3em;
 		overflow: hidden;
-		padding: 2em 3em 2em 3em;
+		padding: 1em 1em 1em 1em;
 		transition: all 300ms ease;
 		white-space: wrap;
 		width: auto;
@@ -93,7 +93,7 @@ $mu-sort-margin: 2em;
 		color: #555555;
 		display: block;
 		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 1.5em;
+		font-size: 1em;
 		margin: .25em .25em .25em .25em;
 		text-transform: uppercase;
 	}
@@ -101,7 +101,7 @@ $mu-sort-margin: 2em;
 	.mu-title {
 		display: block;
 		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 2em;
+		font-size: 1em;
 		font-style: italic;
 		font-weight: bold;
 		margin: .25em .25em .25em .25em;
@@ -110,15 +110,15 @@ $mu-sort-margin: 2em;
 	.mu-author {
 		color: #000000;
 		font-family: 'Palatino', serif;
-		font-size: 1.5em;
+		font-size: 1em;
 		font-weight: 100;
-		margin: .25em .25em .25em .25em;
+		margin: .25em .25em 0 .25em;
 		text-transform: capitalize;
 	}
 
 	.mu-date {
 		color: #333333;
-		font-size: 1.25em;
+		font-size: 1em;
 		font-weight: 100;
 		margin: .25em .25em .25em .25em;
 	}
@@ -126,10 +126,10 @@ $mu-sort-margin: 2em;
 }
 
 .lg-menu-placeholder { display: none; }
-$menu-placeholder-width: 7em;
+$menu-placeholder-width: 3em;
 .menu-placeholder {
 	background-color: transparent;
-	border-right: 3px solid #aaaaaa11;
+	border-right: 1px solid #aaaaaa11;
 	height: calc(100vh);
 	float: left;
 	cursor: pointer;
@@ -142,7 +142,7 @@ $menu-placeholder-width: 7em;
 		left: calc(50% - .5em);
 		position: absolute;
 		top: calc(50% - .5em);
-		transform: scale(2);
+		transform: scale(1);
 	}
 }
 
@@ -170,11 +170,13 @@ $menu-placeholder-width: 7em;
 }
 
 .menu-background {
+	background-color: #aaaaaa05;
 	display: block;
 	height: 100vh;
 	position: fixed;
+	transition: all 400ms ease;
 	width: 100vw;
-	z-index: 1000;
+	z-index: 0;
 }
 
 .menu-background.mu-show {
@@ -188,17 +190,18 @@ $menu-placeholder-width: 7em;
 }
 
 .reader-container {
-	box-shadow: inset 0 0 2em -.5em #cccccc11;
+	//box-shadow: inset 0 0 2em -.5em #cccccc11;
 	font-family: 'Playfair Display', serif;
 	height: 100vh;
 	margin: 0 0 0 2em;
 	margin-left: $menu-placeholder-width;
 	overflow: scroll;
-	padding: 2em 8em 8em 8em;
+	padding: 2em 5em 3em 5em;
+	padding-left: calc(5em - #{$menu-placeholder-width});
 
 	.rdr-header {
 		margin: 0 0 1em 0;
-		min-height: 200px;
+		min-height: 12em;
 		padding: 1em 1em 1em 1em;
 	}
 
@@ -209,10 +212,10 @@ $menu-placeholder-width: 7em;
 	}
 
 	.rdr-title {
-		font-size: 2em;
+		font-size: 1em;
 		font-style: italic;
 		font-weight: 700;
-		margin: 2em 0 2em 0;
+		margin: 1em 0 1em 0;
 		text-align: center;
 
 	}
@@ -221,7 +224,7 @@ $menu-placeholder-width: 7em;
 		font-family: Helvetica, sans-serif;
 		font-size: 1em;
 		font-weight: 100;
-		margin: 2em 0 2em 0;
+		margin: 1em 0 1em 0;
 		text-align: center;
 	}
 
@@ -230,7 +233,7 @@ $menu-placeholder-width: 7em;
 		font-family: Helvetica, sans-serif;
 		font-size: .75em;
 		font-weight: 100;
-		margin: 2em 0 2em 0;
+		margin: 1em 0 1em 0;
 		text-align: center;
 	}
 
@@ -260,9 +263,7 @@ $menu-placeholder-width: 7em;
 
 
 
-
 @media only screen and (min-width:768px) {
-
 	.main-container {
 		height: 100%;
 	}
@@ -397,7 +398,8 @@ $menu-placeholder-width: 7em;
 		margin: 0 0 0 2em;
 		margin-left: $menu-placeholder-width;
 		overflow: scroll;
-		padding: 2em 8em 8em 8em;
+		padding: 2em 14em 8em 14em;
+		padding-left: calc(14em - #{$menu-placeholder-width});
 
 		.rdr-header {
 			margin: 0 0 1em 0;
