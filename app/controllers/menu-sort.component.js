@@ -48,7 +48,7 @@ class MenuSort extends React.Component {
 		return (
 			<div className='mu-sort-container'>
 				<div>
-					<h3 className='mu-sort-header'>Section:</h3>
+					<h3 className='mu-sort-header'>Section</h3>
 					<select className='mu-sort-select'
 						onChange={this.onSectionSort}>
 						{ this.state.sections.map((obj, i) => { return (

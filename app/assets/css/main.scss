@@ -229,11 +229,11 @@ $menu-placeholder-width: 3em;
 	}
 
 	.rdr-date {
-		color: #000;
+		color: #bbb;
 		font-family: Helvetica, sans-serif;
 		font-size: .75em;
 		font-weight: 100;
-		margin: 1em 0 1em 0;
+		margin: 1em 0 0 0;
 		text-align: center;
 	}
 
@@ -273,7 +273,7 @@ $menu-placeholder-width: 3em;
 	}
 
 	$lg-menu-container-width: 22em;
-	$lg-mu-sort-height: 8em;
+	$lg-mu-sort-height: 8.5em;
 	.menu-container {
 		border-right: 1px solid #aaaaaa33;
 		height: 100vh;
@@ -289,22 +289,23 @@ $menu-placeholder-width: 3em;
 		.mu-sort-header {
 			font-size: 1em;
 			font-weight: 100;
-			margin: 2em 0 1em 4em;
+			margin: 1.5em 0 1em 4em;
 			text-transform: uppercase;
 		}
 
 		.mu-sort-select {
-			border: 1px solid #11111122;
+			border: 1px solid #aaaaaa22;
+			cursor: pointer;
 			font-size: 1em;
 			font-weight: 400;
 			height: 3em;
 			margin: 0 0 1em 4em;
-			min-width: 8em;
 			width: auto;
 		}
 
 		.mu-items-container {
-			box-shadow: inset 0 0 3em -.5em #cccccc11;
+			//box-shadow: inset 0 0 3em -.5em #cccccc21;
+			box-shadow: 0 0 3em -.5em #cccccc15;
 			height: calc(100vh - #{$lg-mu-sort-height});
 			top: $lg-mu-sort-height;
 			width: $lg-menu-container-width;
@@ -314,35 +315,34 @@ $menu-placeholder-width: 3em;
 			border-bottom: 1px solid #aaaaaa33;
 			height: auto;
 			min-height: 5em;
-			padding: 2em 3em 2em 3em;
+			padding: 3em 3em 3em 3em;
 			width: auto;
 			&:hover, &:focus {
-				background: #3388cc22;
+				background: #3388cc15;
 			}
 		}
 
 		.mu-section {
 			font-size: 1em;
-			margin: .25em .25em .25em .25em;
+			margin: 0 0 0 0;
 		}
 
 		.mu-title {
 			font-size: 1.25em;
 			font-style: italic;
-			font-weight: bold;
-			margin: .25em .25em .25em .25em;
+			font-weight: 700;
+			margin: .5em 0 .5em 0;
 		}
 
 		.mu-author {
 			font-size: 1em;
 			font-weight: 100;
-			margin: .25em .25em .25em .25em;
+			margin: 0 0 0 0;
 		}
 
 		.mu-date {
 			font-size: 1em;
 			font-weight: 100;
-			margin: .25em .25em .25em .25em;
 		}
 
 	}
@@ -382,7 +382,7 @@ $menu-placeholder-width: 3em;
 		visibility: hidden;
 	}
 
-	.lg-menu-placholder.mu-hide {
+	.lg-menu-placeholder.mu-hide {
 		opacity: 1;
 		visibility: visible;
 	}
@@ -392,14 +392,16 @@ $menu-placeholder-width: 3em;
 		z-index: -1000;
 	}
 
+	$lg-reader-padding-side: calc(5em + 25vw);
 	.reader-container {
-		box-shadow: inset 0 0 2em -.5em #cccccc11;
+		//box-shadow: inset 0 0 2em -.5em #cccccc11;
 		height: 100vh;
 		margin: 0 0 0 2em;
-		margin-left: $menu-placeholder-width;
-		overflow: scroll;
-		padding: 2em 14em 8em 14em;
-		padding-left: calc(14em - #{$menu-placeholder-width});
+		margin-left: $lg-menu-placeholder-width;
+		overflow: auto;
+		padding: 2em 15em 8em 15em;
+		padding-left: calc(#{$lg-reader-padding-side} - #{$lg-menu-placeholder-width});
+		padding-right: $lg-reader-padding-side;
 
 		.rdr-header {
 			margin: 0 0 1em 0;

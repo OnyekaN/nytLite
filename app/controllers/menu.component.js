@@ -35,7 +35,6 @@ class MenuComponent extends React.Component {
 	}
 
 	onTouchClick() {
-		console.log('click');
 		if ( this.state.showMenu === 'show' ) {
 			this.setState({ showMenu: 'hide' });
 		} else if ( this.state.showMenu === 'hide' ) {

@@ -19,14 +19,15 @@ class ArticlesComponent extends React.Component {
 		}
 
 		this.onArticleSelect = this.onArticleSelect.bind(this);
-		this.onDateFilter = this.onDateFilter.bind(this);
+		this.onDateRangeFilter = this.onDateRangeFilter.bind(this);
 		this.onSectionSort = this.onSectionSort.bind(this);
 
 	}
 
 	componentDidMount() {
 
-		let allArticles = [];
+		let allArticles = [],
+				displayArticles = [];
 		Axios.get('/api/articles')
 			.then(res => {
 				let articlesJSON = res.data;
@@ -34,10 +35,10 @@ class ArticlesComponent extends React.Component {
 					allArticles.push(articlesJSON[key]);
 				});
 			}).then(() => {
-				allArticles.sort(this.articlesDateSort);
+				allArticles = displayArticles = this.onDateRangeFilter(allArticles);
 				this.setState({allArticles});
-				this.onDateFilter(2);
-				this.setState({currentArticle: allArticles[0]});
+				this.setState({displayArticles})
+				this.setState({currentArticle: displayArticles[0]});
 			});
 
 	}
@@ -59,18 +60,19 @@ class ArticlesComponent extends React.Component {
 		return 0;
 	}
 
-	onDateFilter(weeks) {
+	onDateRangeFilter(articles) {
 		if ( false ) {
 			return;
 		}
-		let displayArticles = this.state.allArticles.filter((a) => {
+		articles.sort(this.articlesDateSort);
+		let filteredArticles = articles.filter((a) => {
 					let today = Date.now(),
-							range = 1000 * 60 * 60 * 24 * 7 * weeks,
+							dateRange = 1000 * 60 * 60 * 24 * 7 * 2,
 							articleDate = new Date(a.date);
-					if ( today - articleDate <= range )
+					if ( today - articleDate <= dateRange )
 						return a;
 		});
-		this.setState({displayArticles});
+		return filteredArticles;
 	}
 
 	onSectionSort(sortOption) {
@@ -92,7 +94,6 @@ class ArticlesComponent extends React.Component {
 		return (
 			<div className="articles-container">
 				<MenuComponent articles={this.state.displayArticles}
-					dateHandler={this.onDateFilter}
 					selectHandler={this.onArticleSelect}
 					sectionHandler={this.onSectionSort}
 			/>

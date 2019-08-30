@@ -22,8 +22,10 @@ class ReaderComponent extends React.Component {
 		this.createMarkup = this.createMarkup.bind(this);
 	}
 
-	componentDidUpdate() {
-		this.myRef.current.scrollTo(0, 0);
+	componentDidUpdate(prevProps) {
+		if ( prevProps.article !== this.props.article ) {
+			this.myRef.current.scrollTo(0, 0);
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {

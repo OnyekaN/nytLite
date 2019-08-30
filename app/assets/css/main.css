@@ -183,11 +183,11 @@ body {
     margin: 1em 0 1em 0;
     text-align: center; }
   .reader-container .rdr-date {
-    color: #000;
+    color: #bbb;
     font-family: Helvetica, sans-serif;
     font-size: .75em;
     font-weight: 100;
-    margin: 1em 0 1em 0;
+    margin: 1em 0 0 0;
     text-align: center; }
   .reader-container .rdr-article-body {
     margin: 3em 0 3em 0;
@@ -221,52 +221,51 @@ body {
     width: 22em; }
     .menu-container .mu-sort-container {
       border-bottom: 1px solid #aaaaaa33;
-      height: 8em;
+      height: 8.5em;
       margin: 0 0 0 0;
       white-space: nowrap;
       width: 22em; }
     .menu-container .mu-sort-header {
       font-size: 1em;
       font-weight: 100;
-      margin: 2em 0 1em 4em;
+      margin: 1.5em 0 1em 4em;
       text-transform: uppercase; }
     .menu-container .mu-sort-select {
-      border: 1px solid #11111122;
+      border: 1px solid #aaaaaa22;
+      cursor: pointer;
       font-size: 1em;
       font-weight: 400;
       height: 3em;
       margin: 0 0 1em 4em;
-      min-width: 8em;
       width: auto; }
     .menu-container .mu-items-container {
-      box-shadow: inset 0 0 3em -.5em #cccccc11;
-      height: calc(100vh - 8em);
-      top: 8em;
+      box-shadow: 0 0 3em -.5em #cccccc15;
+      height: calc(100vh - 8.5em);
+      top: 8.5em;
       width: 22em; }
     .menu-container .mu-item-entry {
       border-bottom: 1px solid #aaaaaa33;
       height: auto;
       min-height: 5em;
-      padding: 2em 3em 2em 3em;
+      padding: 3em 3em 3em 3em;
       width: auto; }
       .menu-container .mu-item-entry:hover, .menu-container .mu-item-entry:focus {
-        background: #3388cc22; }
+        background: #3388cc15; }
     .menu-container .mu-section {
       font-size: 1em;
-      margin: .25em .25em .25em .25em; }
+      margin: 0 0 0 0; }
     .menu-container .mu-title {
       font-size: 1.25em;
       font-style: italic;
-      font-weight: bold;
-      margin: .25em .25em .25em .25em; }
+      font-weight: 700;
+      margin: .5em 0 .5em 0; }
     .menu-container .mu-author {
       font-size: 1em;
       font-weight: 100;
-      margin: .25em .25em .25em .25em; }
+      margin: 0 0 0 0; }
     .menu-container .mu-date {
       font-size: 1em;
-      font-weight: 100;
-      margin: .25em .25em .25em .25em; }
+      font-weight: 100; }
 
   .menu-placeholder {
     display: none; }
@@ -299,7 +298,7 @@ body {
     opacity: 0.01;
     visibility: hidden; }
 
-  .lg-menu-placholder.mu-hide {
+  .lg-menu-placeholder.mu-hide {
     opacity: 1;
     visibility: visible; }
 
@@ -309,13 +308,13 @@ body {
     z-index: -1000; }
 
   .reader-container {
-    box-shadow: inset 0 0 2em -.5em #cccccc11;
     height: 100vh;
     margin: 0 0 0 2em;
-    margin-left: 3em;
-    overflow: scroll;
-    padding: 2em 14em 8em 14em;
-    padding-left: calc(14em - 3em); }
+    margin-left: 5em;
+    overflow: auto;
+    padding: 2em 15em 8em 15em;
+    padding-left: calc(calc(5em + 25vw) - 5em);
+    padding-right: calc(5em + 25vw); }
     .reader-container .rdr-header {
       margin: 0 0 1em 0;
       min-height: 200px;
