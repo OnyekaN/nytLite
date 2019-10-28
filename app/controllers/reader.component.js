@@ -56,7 +56,7 @@ class ReaderComponent extends React.Component {
 				<div className="rdr-header">
 					<p className="rdr-section">{article.section}</p>
 					<p className="rdr-title">{article.title}</p>
-					<p className="rdr-author">By {article.author}</p>
+					<p className="rdr-author">{article.author}</p>
 					<p className="rdr-date">{article_date}</p>
 				</div>
 				<div className="rdr-article-body"

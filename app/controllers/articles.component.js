@@ -36,6 +36,7 @@ class ArticlesComponent extends React.Component {
 				});
 			}).then(() => {
 				allArticles = displayArticles = this.onDateRangeFilter(allArticles);
+				console.log(allArticles);
 				this.setState({allArticles});
 				this.setState({displayArticles})
 				this.setState({currentArticle: displayArticles[0]});
